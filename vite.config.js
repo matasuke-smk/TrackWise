@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
-export default defineConfig({
-  base: '/TrackWise/',
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/TrackWise/' : '/',
   plugins: [
     react(),
     VitePWA({
