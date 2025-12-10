@@ -1,0 +1,140 @@
+.report-modal {
+  max-width: 700px;
+  max-height: 85vh;
+}
+
+.report-tabs {
+  display: flex;
+  gap: 0;
+  padding: 0 1.5rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  bottom: -2px;
+}
+
+.tab-button:hover {
+  color: var(--primary-color);
+  background: rgba(0, 212, 170, 0.05);
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+  background: rgba(0, 212, 170, 0.05);
+}
+
+.report-table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: calc(85vh - 180px);
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.report-table thead {
+  position: sticky;
+  top: 0;
+  background: var(--card-bg);
+  z-index: 10;
+}
+
+.report-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+}
+
+.report-table th:first-child {
+  text-align: left;
+}
+
+.report-table th:not(:first-child) {
+  text-align: right;
+}
+
+.report-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.report-table td:first-child {
+  font-weight: 600;
+  text-align: left;
+}
+
+.report-table td:not(:first-child) {
+  text-align: right;
+  font-weight: 600;
+}
+
+.report-table tbody tr {
+  transition: background 0.2s;
+}
+
+.report-table tbody tr:hover {
+  background: var(--card-hover);
+}
+
+.report-table tbody tr.current-month {
+  background: rgba(0, 212, 170, 0.08);
+  font-weight: 700;
+}
+
+.report-table tbody tr.current-month:hover {
+  background: rgba(0, 212, 170, 0.12);
+}
+
+.report-table tfoot {
+  position: sticky;
+  bottom: 0;
+  background: var(--card-bg);
+}
+
+.report-table .total-row {
+  font-weight: 700;
+  border-top: 2px solid var(--border-color);
+  background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-secondary) 100%);
+}
+
+.report-table .total-row td {
+  padding: 1rem;
+  border-bottom: none;
+}
+
+.report-table .income {
+  color: var(--primary-color);
+}
+
+.report-table .expense {
+  color: var(--accent-color);
+}
+
+.report-table .positive {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.report-table .negative {
+  color: var(--danger-color);
+  font-weight: 700;
+}
