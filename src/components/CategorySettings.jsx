@@ -177,20 +177,12 @@ function CategorySettings({ onNavigate }) {
             />
             <span className="currency">円</span>
           </div>
-          <div className="display-toggle">
-            <button
-              className={`toggle-option ${category.displayGroup === 'main' ? 'active' : ''}`}
-              onClick={() => handleToggleDisplayGroup(category)}
-            >
-              メイン
-            </button>
-            <button
-              className={`toggle-option ${category.displayGroup === 'others' ? 'active' : ''}`}
-              onClick={() => handleToggleDisplayGroup(category)}
-            >
-              その他
-            </button>
-          </div>
+          <button
+            className="group-toggle-btn"
+            onClick={() => handleToggleDisplayGroup(category)}
+          >
+            {category.displayGroup === 'main' ? 'メイン' : 'その他'}
+          </button>
         </div>
         <div className="category-actions">
           <button className="delete-btn" onClick={() => handleDelete(category.id)}>削除</button>
@@ -293,20 +285,12 @@ function CategorySettings({ onNavigate }) {
                     />
                     <span className="currency">円</span>
                   </div>
-                  <div className="display-toggle">
-                    <button
-                      className={`toggle-option ${newIncome.displayGroup === 'main' ? 'active' : ''}`}
-                      onClick={() => setNewIncome({ ...newIncome, displayGroup: newIncome.displayGroup === 'main' ? 'others' : 'main' })}
-                    >
-                      メイン
-                    </button>
-                    <button
-                      className={`toggle-option ${newIncome.displayGroup === 'others' ? 'active' : ''}`}
-                      onClick={() => setNewIncome({ ...newIncome, displayGroup: newIncome.displayGroup === 'others' ? 'main' : 'others' })}
-                    >
-                      その他
-                    </button>
-                  </div>
+                  <button
+                    className="group-toggle-btn"
+                    onClick={() => setNewIncome({ ...newIncome, displayGroup: newIncome.displayGroup === 'main' ? 'others' : 'main' })}
+                  >
+                    {newIncome.displayGroup === 'main' ? 'メイン' : 'その他'}
+                  </button>
                 </div>
                 <div className="category-actions">
                   <button className="add-btn" onClick={handleAddIncome}>追加</button>
@@ -349,20 +333,12 @@ function CategorySettings({ onNavigate }) {
                     />
                     <span className="currency">円</span>
                   </div>
-                  <div className="display-toggle">
-                    <button
-                      className={`toggle-option ${newExpense.displayGroup === 'main' ? 'active' : ''}`}
-                      onClick={() => setNewExpense({ ...newExpense, displayGroup: newExpense.displayGroup === 'main' ? 'others' : 'main' })}
-                    >
-                      メイン
-                    </button>
-                    <button
-                      className={`toggle-option ${newExpense.displayGroup === 'others' ? 'active' : ''}`}
-                      onClick={() => setNewExpense({ ...newExpense, displayGroup: newExpense.displayGroup === 'others' ? 'main' : 'others' })}
-                    >
-                      その他
-                    </button>
-                  </div>
+                  <button
+                    className="group-toggle-btn"
+                    onClick={() => setNewExpense({ ...newExpense, displayGroup: newExpense.displayGroup === 'main' ? 'others' : 'main' })}
+                  >
+                    {newExpense.displayGroup === 'main' ? 'メイン' : 'その他'}
+                  </button>
                 </div>
                 <div className="category-actions">
                   <button className="add-btn" onClick={handleAddExpense}>追加</button>

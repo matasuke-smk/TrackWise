@@ -174,8 +174,9 @@
   padding: 0.5rem;
   border: 2px solid var(--border-color);
   border-radius: 6px;
-  flex: 1;
-  min-width: 120px;
+  width: 80px;
+  min-width: 80px;
+  max-width: 80px;
   transition: border-color 0.2s;
   background: #ffffff;
   color: #1a1a1a;
@@ -251,6 +252,25 @@
 
 .toggle-option:hover:not(.active) {
   background: var(--card-hover);
+}
+
+.group-toggle-btn {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--bg-color);
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.group-toggle-btn:hover {
+  background: var(--card-hover);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .category-actions {
