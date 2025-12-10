@@ -4,7 +4,11 @@
       "Bash(npm run build:*)",
       "Bash(npm run dev:*)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nfeat: TrackWise収支管理アプリの初期実装\n\n主要機能:\n- 月別の収支管理（収入・支出カテゴリ）\n- カテゴリのカスタマイズ（追加・編集・削除・並び替え）\n- メイン/その他グループの切り替え\n- デフォルト値の一括反映機能（月選択可能）\n- 月次・年次の収支一覧表示\n- 左右スワイプでの月切り替え\n- PWA対応\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git remote add:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)"
     ]
   }
 }
