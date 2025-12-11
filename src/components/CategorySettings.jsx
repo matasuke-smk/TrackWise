@@ -14,12 +14,12 @@ function CategorySettings({ onNavigate }) {
   const [newIncome, setNewIncome] = useState({
     name: '',
     displayGroup: 'main',
-    defaultAmount: 0
+    defaultAmount: ''
   })
   const [newExpense, setNewExpense] = useState({
     name: '',
     displayGroup: 'main',
-    defaultAmount: 0
+    defaultAmount: ''
   })
 
   const handleApplyDefaults = () => {
@@ -94,11 +94,11 @@ function CategorySettings({ onNavigate }) {
 
   const handleAddIncome = () => {
     if (newIncome.name.trim()) {
-      addCategory({ ...newIncome, type: 'income' })
+      addCategory({ ...newIncome, type: 'income', defaultAmount: newIncome.defaultAmount === '' ? 0 : newIncome.defaultAmount })
       setNewIncome({
         name: '',
         displayGroup: 'main',
-        defaultAmount: 0
+        defaultAmount: ''
       })
       setShowAddIncome(false)
       refresh()
@@ -107,11 +107,11 @@ function CategorySettings({ onNavigate }) {
 
   const handleAddExpense = () => {
     if (newExpense.name.trim()) {
-      addCategory({ ...newExpense, type: 'expense' })
+      addCategory({ ...newExpense, type: 'expense', defaultAmount: newExpense.defaultAmount === '' ? 0 : newExpense.defaultAmount })
       setNewExpense({
         name: '',
         displayGroup: 'main',
-        defaultAmount: 0
+        defaultAmount: ''
       })
       setShowAddExpense(false)
       refresh()
@@ -122,7 +122,7 @@ function CategorySettings({ onNavigate }) {
     setNewIncome({
       name: '',
       displayGroup: 'main',
-      defaultAmount: 0
+      defaultAmount: ''
     })
     setShowAddIncome(false)
   }
@@ -131,7 +131,7 @@ function CategorySettings({ onNavigate }) {
     setNewExpense({
       name: '',
       displayGroup: 'main',
-      defaultAmount: 0
+      defaultAmount: ''
     })
     setShowAddExpense(false)
   }
@@ -171,9 +171,9 @@ function CategorySettings({ onNavigate }) {
             <input
               type="number"
               className="default-amount-input"
-              value={category.defaultAmount || 0}
-              onChange={(e) => handleUpdateDefaultAmount(category.id, parseInt(e.target.value) || 0)}
-              placeholder="0"
+              value={category.defaultAmount === 0 ? '' : category.defaultAmount}
+              onChange={(e) => handleUpdateDefaultAmount(category.id, e.target.value === '' ? 0 : parseInt(e.target.value) || 0)}
+              placeholder="金額"
             />
             <span className="currency">円</span>
           </div>
@@ -280,8 +280,8 @@ function CategorySettings({ onNavigate }) {
                       type="number"
                       className="default-amount-input"
                       value={newIncome.defaultAmount}
-                      onChange={(e) => setNewIncome({ ...newIncome, defaultAmount: parseInt(e.target.value) || 0 })}
-                      placeholder="0"
+                      onChange={(e) => setNewIncome({ ...newIncome, defaultAmount: e.target.value === '' ? '' : parseInt(e.target.value) || 0 })}
+                      placeholder="金額"
                     />
                     <span className="currency">円</span>
                   </div>
@@ -328,8 +328,8 @@ function CategorySettings({ onNavigate }) {
                       type="number"
                       className="default-amount-input"
                       value={newExpense.defaultAmount}
-                      onChange={(e) => setNewExpense({ ...newExpense, defaultAmount: parseInt(e.target.value) || 0 })}
-                      placeholder="0"
+                      onChange={(e) => setNewExpense({ ...newExpense, defaultAmount: e.target.value === '' ? '' : parseInt(e.target.value) || 0 })}
+                      placeholder="金額"
                     />
                     <span className="currency">円</span>
                   </div>
