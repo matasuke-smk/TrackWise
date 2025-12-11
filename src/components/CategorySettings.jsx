@@ -38,12 +38,14 @@ function CategorySettings({ onNavigate }) {
       amount: cat.defaultAmount || 0
     }))
 
+    const count = selectedMonths.length
     selectedMonths.forEach(yearMonth => {
       saveMonthlyData(yearMonth, newData)
     })
 
     setShowMonthSelectModal(false)
     setSelectedMonths([])
+    alert(`${count}ヶ月にデフォルト値を反映しました`)
     refresh()
   }
 

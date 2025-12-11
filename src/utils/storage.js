@@ -127,7 +127,7 @@ export const getMonthlyData = (yearMonth) => {
       const categories = getCategories()
       allData[yearMonth] = categories.map(cat => ({
         categoryId: cat.id,
-        amount: cat.defaultAmount || 0,
+        amount: 0,
       }))
       localStorage.setItem(STORAGE_KEYS.MONTHLY_DATA, JSON.stringify(allData))
     } else {
@@ -148,7 +148,7 @@ export const getMonthlyData = (yearMonth) => {
         if (!migrated.find(item => item.categoryId === cat.id)) {
           migrated.push({
             categoryId: cat.id,
-            amount: cat.defaultAmount || 0
+            amount: 0
           })
         }
       })
